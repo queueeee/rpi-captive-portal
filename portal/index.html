@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Portal - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo svg {
+            width: 80px;
+            height: 80px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .terms-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 25px;
+        }
+        
+        .terms-box h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .terms-box p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .terms-box ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .terms-box li {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .checkbox-container label {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 15px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-accept {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-accept:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-accept:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .btn-decline {
+            background: #e9ecef;
+            color: #495057;
+        }
+        
+        .btn-decline:hover {
+            background: #dee2e6;
+        }
+        
+        .message {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" stroke="#667eea"></circle>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill="#667eea" opacity="0.2"></path>
+                <path d="M12 6v6l4 2" stroke="#667eea"></path>
+            </svg>
+        </div>
+        
+        <h1>Welcome to Free WiFi</h1>
+        <p class="subtitle">Please review and accept our terms to continue</p>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="terms-box">
+            <h2>Terms of Service</h2>
+            
+            <p>By accessing this wireless network, you agree to the following terms and conditions:</p>
+            
+            <h3 style="font-size: 16px; margin: 15px 0 10px 0; color: #333;">1. Acceptable Use</h3>
+            <ul>
+                <li>This network is provided for lawful purposes only</li>
+                <li>You agree not to use this connection for any illegal activities</li>
+                <li>Bandwidth-intensive activities may be restricted</li>
+                <li>The network administrator reserves the right to monitor and log traffic</li>
+            </ul>
+            
+            <h3 style="font-size: 16px; margin: 15px 0 10px 0; color: #333;">2. Privacy & Security</h3>
+            <ul>
+                <li>This is an open network - use encryption when possible</li>
+                <li>Your MAC address and connection data may be logged</li>
+                <li>We do not guarantee the security of your data</li>
+                <li>Use VPN services for sensitive activities</li>
+            </ul>
+            
+            <h3 style="font-size: 16px; margin: 15px 0 10px 0; color: #333;">3. Limitations</h3>
+            <ul>
+                <li>Connection may be terminated without notice</li>
+                <li>No warranty or guarantee of service quality</li>
+                <li>The administrator is not liable for any damages</li>
+                <li>You are responsible for securing your device</li>
+            </ul>
+            
+            <p style="margin-top: 15px;"><strong>By clicking "I Agree", you acknowledge that you have read, understood, and agree to be bound by these terms.</strong></p>
+        </div>
+        
+        <div class="checkbox-container" onclick="toggleCheckbox()">
+            <input type="checkbox" id="agreeCheckbox" onclick="event.stopPropagation()">
+            <label for="agreeCheckbox">I have read and agree to the Terms of Service</label>
+        </div>
+        
+        <div class="btn-container">
+            <button class="btn-decline" onclick="decline()">Decline</button>
+            <button class="btn-accept" id="acceptBtn" disabled onclick="accept()">I Agree</button>
+        </div>
+    </div>
+    
+    <script>
+        const checkbox = document.getElementById('agreeCheckbox');
+        const acceptBtn = document.getElementById('acceptBtn');
+        const messageDiv = document.getElementById('message');
+        
+        checkbox.addEventListener('change', function() {
+            acceptBtn.disabled = !this.checked;
+        });
+        
+        function toggleCheckbox() {
+            checkbox.checked = !checkbox.checked;
+            acceptBtn.disabled = !checkbox.checked;
+        }
+        
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = 'message ' + type;
+            messageDiv.style.display = 'block';
+        }
+        
+        async function accept() {
+            if (!checkbox.checked) return;
+            
+            showMessage('Connecting you to the internet...', 'success');
+            
+            try {
+                const response = await fetch('accept.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'agree=1'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    showMessage('✓ Access granted! You are now connected.', 'success');
+                    
+                    // Wait a moment then try to dismiss the captive portal
+                    setTimeout(() => {
+                        // Try to close the captive portal window
+                        if (window.opener) {
+                            window.close();
+                        } else {
+                            // Redirect to a page that dismisses the notification
+                            window.location.href = 'portal-dismissed.html';
+                        }
+                    }, 1500);
+                } else {
+                    showMessage('Connection error. Please try again.', 'error');
+                }
+            } catch (error) {
+                showMessage('Network error. Please check your connection.', 'error');
+            }
+        }
+        
+        function decline() {
+            showMessage('You must accept the terms to use this network.', 'error');
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
