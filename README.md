@@ -72,7 +72,7 @@ ping -c 4 google.com
 ```bash
 # Download the setup files
 cd ~
-git clone https://github.com/queueeee/raspberry-pi-captive-portal raspberry-pi-captive-portal
+git clone https://github.com/queueeee/rpi-captive-portal raspberry-pi-captive-portal
 cd raspberry-pi-captive-portal
 
 # Make setup script executable
